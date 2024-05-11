@@ -45,7 +45,7 @@ const themeSwitcher = {
           // Close dropdown
           document.querySelector(this.menuTarget)?.removeAttribute("open");
         },
-        false
+        false,
       );
     });
   },
