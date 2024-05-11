@@ -37,7 +37,7 @@
   }
 </style>
 
-<script is:inline>
+<script>
   document.addEventListener("astro:page-load", () => {
     const theme = (() => {
       if (
@@ -46,7 +46,7 @@
       ) {
         return localStorage.getItem("picoPreferredColorScheme");
       }
-      if (window.matchMedia("(prefers-color-scheme: dark").matches) {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
         return "dark";
       }
       return "light";
@@ -71,7 +71,7 @@
       if (isDark) {
         element.setAttribute("data-theme", "dark");
       } else {
-        element.setAttribute("data-theme", "light");
+        element.setAttribute("data-theme", "");
       }
 
       localStorage.setItem(
@@ -88,11 +88,11 @@
 
 <script>
   document.addEventListener("astro:after-swap", () => {
-    if (localStorage.theme === "dark") {
+    if (localStorage.getItem("picoPreferredColorScheme") === "dark") {
       document.documentElement.setAttribute("data-theme", "dark");
       document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.setAttribute("data-theme", "light");
+      document.documentElement.setAttribute("data-theme", "");
       document.documentElement.classList.remove("dark");
     }
   });
