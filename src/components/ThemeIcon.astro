@@ -60,7 +60,7 @@
       document.documentElement.classList.add("dark");
     }
 
-    window.localStorage.setItem("picoPreferredColorScheme", theme);
+    window.localStorage.setItem("picoPreferredColorScheme", theme as string);
 
     const handleToggleClick = () => {
       const element = document.documentElement;
@@ -81,7 +81,7 @@
     };
 
     document
-      .getElementById("themeToggle")
+      .getElementById("themeToggle")!
       .addEventListener("click", handleToggleClick);
   });
 </script>

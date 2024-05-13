@@ -75,7 +75,7 @@ const { summary, elements } = Astro.props;
             (event) => {
               event.preventDefault();
               // Set scheme
-              this.scheme = button.getAttribute(this.buttonAttribute);
+              this.scheme = button.getAttribute(this.buttonAttribute) as string;
               // Close dropdown
               document.querySelector(this.menuTarget)?.removeAttribute("open");
             },
