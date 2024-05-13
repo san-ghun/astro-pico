@@ -1,0 +1,18 @@
+---
+interface Props {
+  purpose: string;
+  label: string;
+  min: string;
+  max: string;
+  value: string;
+  id: string;
+  name: string;
+}
+
+const { purpose, label, min, max, value, id, name } = Astro.props;
+---
+
+<label for={purpose}>
+  {label}
+  <input type="range" min={min} max={max} value={value} id={id} name={name} />
+</label>

@@ -53,7 +53,7 @@
     })();
 
     if (theme === "light") {
-      document.documentElement.setAttribute("data-theme", "");
+      document.documentElement.setAttribute("data-theme", "light");
       document.documentElement.classList.remove("dark");
     } else {
       document.documentElement.setAttribute("data-theme", "dark");
@@ -71,7 +71,7 @@
       if (isDark) {
         element.setAttribute("data-theme", "dark");
       } else {
-        element.setAttribute("data-theme", "");
+        element.setAttribute("data-theme", "light");
       }
 
       localStorage.setItem(
@@ -92,7 +92,7 @@
       document.documentElement.setAttribute("data-theme", "dark");
       document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.setAttribute("data-theme", "");
+      document.documentElement.setAttribute("data-theme", "light");
       document.documentElement.classList.remove("dark");
     }
   });

@@ -1,0 +1,23 @@
+---
+import Heading from "./Heading.astro";
+
+interface Props {
+  id: string;
+  title: string;
+  description: string;
+  addition: string;
+}
+
+const { id, title, description, addition } = Astro.props;
+---
+
+<article id={id}>
+  <Heading title={title} heading="2" description={description} />
+  {
+    addition.length === 0 ? null : (
+      <footer>
+        <small>{addition}</small>
+      </footer>
+    )
+  }
+</article>

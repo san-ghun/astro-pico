@@ -1,0 +1,17 @@
+---
+interface Props {
+  id: string;
+  value: string;
+  max: string;
+}
+
+const { id, value, max } = Astro.props;
+---
+
+{
+  value.length === 0 ? (
+    <progress id={id} />
+  ) : (
+    <progress id={id} value={value} max={max} />
+  )
+}

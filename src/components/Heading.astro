@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  heading: string | undefined | null;
+  description: string | undefined | null;
+}
+
+const { title, heading = "2", description } = Astro.props;
+let Element: string | undefined | null = heading;
+switch (heading) {
+  case "1":
+    Element = "h1";
+    break;
+  case "2":
+    Element = "h2";
+    break;
+  case "3":
+    Element = "h3";
+    break;
+  case "4":
+    Element = "h4";
+    break;
+  case "5":
+    Element = "h5";
+    break;
+  default:
+    Element = "h6";
+    break;
+}
+---
+
+<Element>{title}</Element>
+{typeof description === "string" ? <p>{description}</p> : null}

@@ -1,0 +1,14 @@
+---
+interface Props {
+  purpose: string;
+  label: string;
+  placeholder: string;
+  id: string;
+  name: string;
+}
+
+const { purpose, label, placeholder, id, name } = Astro.props;
+---
+
+<label for={purpose}>{label}</label>
+<input type="search" id={id} name={name} placeholder={placeholder} />

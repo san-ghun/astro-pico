@@ -1,0 +1,15 @@
+---
+interface Props {
+  purpose: string;
+  label: string;
+  id: string;
+  name: string;
+}
+
+const { purpose, label, id, name } = Astro.props;
+---
+
+<label for={purpose}>
+  {label}
+  <input type="file" id={id} name={name} />
+</label>

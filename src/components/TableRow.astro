@@ -1,0 +1,13 @@
+---
+interface Props {
+  label: string;
+  values: string[];
+}
+
+const { label, values } = Astro.props;
+---
+
+<tr>
+  <th scope="col">{label}</th>
+  {values.map((value) => <td scope="row">{value}</td>)}
+</tr>

@@ -1,0 +1,25 @@
+---
+import TableColumn from "./TableColumn.astro";
+import TableRow from "./TableRow.astro";
+---
+
+<table class="striped">
+  <thead>
+    <TableColumn
+      label="#"
+      columnNames={[
+        "Heading",
+        "Heading",
+        "Heading",
+        "Heading",
+        "Heading",
+        "Heading",
+      ]}
+    />
+  </thead>
+  <tbody>
+    <TableRow label="row" values={["1", "2", "3", "4", "5", "6"]} />
+    <TableRow label="1" values={["abc", "d", "efg", "hijk", "lmnop", "qrs"]} />
+    <TableRow label="2" values={["t", "u", "v", "w", "x", "yz"]} />
+  </tbody>
+</table>

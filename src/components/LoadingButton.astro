@@ -1,0 +1,9 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<button aria-busy="true">{title}</button>

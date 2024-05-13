@@ -1,0 +1,42 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+// TODO: Make components for grid with button tags or p tags with other tags
+---
+
+<h3>{title}</h3>
+<div class="grid">
+  <p><a href="#">Primary link</a></p>
+  <p>
+    <a href="#" class="secondary">Secondary link</a>
+  </p>
+  <p>
+    <a href="#" class="contrast">Contrast link</a>
+  </p>
+</div>
+<div class="grid">
+  <p><strong>Bold</strong></p>
+  <p><em>Italic</em></p>
+  <p><u>Underline</u></p>
+</div>
+<div class="grid">
+  <p><del>Deleted</del></p>
+  <p><ins>Inserted</ins></p>
+  <p><s>Strikethrough</s></p>
+</div>
+<div class="grid">
+  <p><small>Small </small></p>
+  <p>Text <sub>Sub</sub></p>
+  <p>Text <sup>Sup</sup></p>
+</div>
+<div class="grid">
+  <p>
+    <abbr title="Abbreviation" data-tooltip="Abbreviation">Abbr.</abbr>
+  </p>
+  <p><kbd>Kbd</kbd></p>
+  <p><mark>Highlighted</mark></p>
+</div>
