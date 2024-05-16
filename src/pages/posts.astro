@@ -1,0 +1,19 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const pageTitle: string = "AstroPico";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <main>
+    <section>
+      <div class="container">
+        <hgroup>
+          <h1>{pageTitle}</h1>
+          <p>Astro styled with PicoCSS</p>
+        </hgroup>
+      </div>
+    </section>
+  </main>
+  <footer></footer>
+</BaseLayout>
