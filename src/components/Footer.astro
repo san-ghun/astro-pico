@@ -1,8 +1,24 @@
 ---
-
+import Social from "./Social.astro";
 ---
 
 <footer class="container">
+  <nav aria-label="breadcrumb" style="--pico-nav-breadcrumb-divider: '|';">
+    <ul>
+      <li>
+        <Social platform="github" username="" />
+      </li>
+      <li>
+        <Social platform="x" username="" />
+      </li>
+      <li>
+        <Social platform="instagram" username="" />
+      </li>
+      <li>
+        <Social platform="discord" username="" />
+      </li>
+    </ul>
+  </nav>
   <p>
     Built with <a href="https://astro.build/">Astro</a> & <a
       href="https://picocss.com/">Pico</a

@@ -1,0 +1,23 @@
+---
+import { Icon } from "astro-icon/components";
+
+// svg from the Tabler Icons (https://tabler.io/icons)
+
+interface Props {
+  platform: string;
+  username: string;
+}
+
+const { platform, username } = Astro.props;
+---
+
+<a href={`https://www.${platform}.com/${username}`}
+  ><Icon name={`social/${platform}`} />
+</a>
+
+<style>
+  svg {
+    width: 1.5em;
+    height: 1.5em;
+  }
+</style>
