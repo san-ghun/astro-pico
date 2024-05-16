@@ -1,0 +1,124 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import "../styles/company.css";
+
+import NavWrapper from "@components/NavigationWrapper.astro";
+import Heading from "@components/Heading.astro";
+import Sample from "@components/preview/Sample.astro";
+
+import { Image } from "astro:assets";
+import architecture_1 from "../assets/ashim-d-silva-3Ijt7UkSBYE-unsplash-1500x750.jpg";
+import architecture_2 from "../assets/maarten-deckers-T5nXYXCf50I-unsplash-1500x750.jpg";
+import architecture_3 from "../assets/daniel-von-appen-tb4heMa-ZRo-unsplash-1500-750.jpg";
+import architecture_4 from "../assets/matthew-hamilton-Ru3Ap8TNcsk-unsplash-1500-750.jpg";
+
+const pageTitle: string = "Company";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <body>
+    <!-- Hero -->
+    <div class="hero" data-theme="dark">
+      <NavWrapper />
+      <header class="container">
+        <Heading
+          title="Company"
+          heading="1"
+          description="A classic company or blog layout with a sidebar"
+        />
+        <p>
+          <a href="#" role="button">Call to action</a>
+        </p>
+      </header>
+    </div>
+    <!-- ./ Hero -->
+
+    <!-- Main -->
+    <main class="container">
+      <div class="grid">
+        <section>
+          <hgroup>
+            <Heading
+              title="Ut sit amet sem ut velit"
+              heading="2"
+              description="Quisque mi est"
+            />
+          </hgroup>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Pellentesque lobortis est vel velit bibendum ultrices. Sed aliquam
+            tortor vel odio fermentum ullamcorper eu vitae neque. Sed non diam
+            at tellus venenatis viverra. Vestibulum et leo laoreet arcu tempor
+            eleifend venenatis ac leo. Pellentesque euismod justo sed nisl
+            sollicitudin varius. Duis venenatis nisl sit amet ante rutrum
+            posuere. Etiam nec ullamcorper leo, sed placerat mauris.
+          </p>
+          <figure>
+            <Image src={architecture_1} alt="Architecture" />
+            <figcaption>
+              Image from
+              <a href="https://unsplash.com/photos/3Ijt7UkSBYE" target="_blank"
+                >unsplash.com</a
+              >
+            </figcaption>
+          </figure>
+          <Heading
+            title="Nulla augue metus"
+            heading="3"
+            description="Pacilisis sed ante ut, posuere volutpat quam. Maecenas maximus blandit mi ac finibus. Proin quis lacinia tellus. Aliquam erat volutpat. Aliquam erat volutpat. Phasellus suscipit nisi augue, id accumsan tortor auctor ut. Duis odio arcu, egestas nec nulla vel, fermentum bibendum ex."
+          />
+          <Heading
+            title="Sed purus sapien, porta a cursus sed, maximus et metus."
+            heading="3"
+            description="Phasellus molestie ante sed massa bibendum, eget tempus ex sollicitudin. Vestibulum libero nulla, porttitor nec faucibus et, scelerisque eget quam. Nullam finibus tempor dui, vel congue urna condimentum ac. Fusce ultricies mauris justo, nec vulputate mauris pulvinar eu. Sed tempus ligula lorem, at tincidunt risus mollis non. Quisque et turpis sit amet sapien gravida ullamcorper in eu velit. Curabitur luctus ornare finibus. Proin tempor nulla sagittis est fermentum dapibus. Vestibulum posuere mattis congue. Ut porttitor id sem euismod tristique. Quisque mi est, posuere nec lorem eu, vulputate vehicula diam. Nullam scelerisque, libero posuere efficitur bibendum, urna odio finibus lorem, sed volutpat dolor ligula in dolor. Suspendisse suscipit efficitur neque, ut porta tellus mollis vel. Nam consequat arcu ac tellus porta, nec egestas orci sodales."
+          />
+        </section>
+
+        <aside>
+          <a href="#" aria-label="Example">
+            <Image src={architecture_2} alt="Architecture" />
+          </a>
+          <p>
+            <a href="#">Donec sit amet</a><br />
+            <small
+              >Class aptent taciti sociosqu ad litora torquent per conubia
+              nostra</small
+            >
+          </p>
+          <a href="#" aria-label="Example">
+            <Image src={architecture_3} alt="Architecture" />
+          </a>
+          <p>
+            <a href="#">Suspendisse potenti</a><br />
+            <small>Proin non condimentum tortor. Donec in feugiat sapien.</small
+            >
+          </p>
+          <a href="#" aria-label="Example">
+            <Image src={architecture_4} alt="Architecture" />
+          </a>
+          <p>
+            <a href="#">Nullam lobortis placerat aliquam</a><br />
+            <small
+              >Maecenas vitae nibh blandit dolor commodo egestas vel eget neque.
+              Praesent semper justo orci, vel imperdiet mi auctor in.</small
+            >
+          </p>
+        </aside>
+      </div>
+    </main>
+    <!-- ./ Main -->
+
+    <!-- Subscribe -->
+    <section aria-label="Subscribe example">
+      <div class="container">
+        <article>
+          <Sample
+            title="Subscribe"
+            description="Litora torquent per conubia nostra"
+          />
+        </article>
+      </div>
+    </section>
+    <!-- ./ Subscribe -->
+  </body>
+</BaseLayout>
