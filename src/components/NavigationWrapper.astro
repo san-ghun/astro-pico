@@ -1,0 +1,26 @@
+---
+import Hamburger from "./Hamburger.astro";
+import Navigation from "./Navigation.astro";
+---
+
+<div>
+  <nav class="container nav-wrapper">
+    <Hamburger />
+    <ul>
+      <li><a href="/" class="contrast"><strong>AstroPico</strong></a></li>
+    </ul>
+    <Navigation />
+  </nav>
+</div>
+
+<style>
+  .nav-wrapper {
+    display: block;
+  }
+
+  @media screen and (min-width: 636px) {
+    .nav-wrapper {
+      display: flex;
+    }
+  }
+</style>

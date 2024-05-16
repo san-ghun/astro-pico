@@ -1,10 +1,15 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import NavWrapper from "@components/NavigationWrapper.astro";
 
 const pageTitle: string = "AstroPico";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+  <header>
+    <NavWrapper />
+  </header>
+  <hr />
   <main>
     <section>
       <div class="container">

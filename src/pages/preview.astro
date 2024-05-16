@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import NavWrapper from "@components/NavigationWrapper.astro";
 
 import { Image } from "astro:assets";
 import minimalLandscape from "../assets/aleksandar-jason-a562ZEFKW8I-unsplash-2000x1000.jpg";
@@ -39,6 +40,10 @@ const pageTitle: string = "Preview";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+  <header>
+    <NavWrapper />
+  </header>
+  <hr />
   <main class="container">
     <!-- HGroup -->
     <section>
