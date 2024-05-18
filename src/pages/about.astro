@@ -2,7 +2,25 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import NavWrapper from "@components/NavigationWrapper.astro";
 
-const pageTitle: string = "AstroPico";
+const pageTitle: string = "About Me";
+
+const identity = {
+  firstName: "Astro",
+  lastName: "Pico",
+  country: "Germany",
+  occupation: "Programmer",
+  hobbies: ["coding", "stargazing", "building something"],
+};
+type TIdentity = typeof identity;
+
+const skills: string[] = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Astro",
+];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -15,8 +33,35 @@ const pageTitle: string = "AstroPico";
       <div class="container">
         <hgroup>
           <h1>{pageTitle}</h1>
-          <p>Astro styled with PicoCSS</p>
+          <p>... a minimal Astro theme template!</p>
         </hgroup>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <p>Here are a few facts about me:</p>
+        <ul>
+          <li>
+            My name is <strong>{identity.firstName} {identity.lastName}</strong>
+          </li>
+          <li>
+            I am from <em>{identity.country}</em> and I work as a <u
+              >{identity.occupation}</u
+            >
+          </li>
+          {
+            identity.hobbies.length >= 2 && (
+              <li>
+                Two of my hobbies are: <em>{identity.hobbies[0]}</em> and
+                <em>{identity.hobbies[1]}</em>
+              </li>
+            )
+          }
+        </ul>
+        <p>My skills are:</p>
+        <ul>
+          {skills.map((skill) => <li>{skill}</li>)}
+        </ul>
       </div>
     </section>
   </main>
