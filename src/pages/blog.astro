@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import NavWrapper from "@components/NavigationWrapper.astro";
+import BlogPost from "@components/BlogPost.astro";
 
 const allPosts = await Astro.glob("../pages/posts/*.md");
 const pageTitle: string = "Blog";
@@ -25,9 +26,7 @@ const pageTitle: string = "Blog";
         <ul>
           {
             allPosts.map((post) => (
-              <li>
-                <a href={post.url}>{post.frontmatter.title}</a>
-              </li>
+              <BlogPost url={post.url} title={post.frontmatter.title} />
             ))
           }
         </ul>
