@@ -1,0 +1,30 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import NavWrapper from "@components/NavigationWrapper.astro";
+
+const pageTitle: string = "404";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <header>
+    <NavWrapper />
+  </header>
+  <hr />
+  <main>
+    <section>
+      <div class="container">
+        <hgroup>
+          <h1>{pageTitle}</h1>
+          <p>Page Not Found</p>
+        </hgroup>
+        <p>Oops, it is dead end.</p>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <a href="/" role="button">Back to home</a>
+      </div>
+    </section>
+  </main>
+  <footer></footer>
+</BaseLayout>
