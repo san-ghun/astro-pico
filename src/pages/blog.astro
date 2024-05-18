@@ -1,0 +1,38 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import NavWrapper from "@components/NavigationWrapper.astro";
+
+const allPosts = await Astro.glob("../pages/posts/*.md");
+const pageTitle: string = "Blog";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <header>
+    <NavWrapper />
+  </header>
+  <hr />
+  <main>
+    <section>
+      <div class="container">
+        <hgroup>
+          <h1>{pageTitle}</h1>
+          <p>All thoughts about this theme.</p>
+        </hgroup>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <ul>
+          {
+            allPosts.map((post) => (
+              <li>
+                <a href={post.url}>{post.frontmatter.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer></footer>
+</BaseLayout>
