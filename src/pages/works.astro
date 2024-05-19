@@ -1,0 +1,24 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import NavWrapper from "@components/NavigationWrapper.astro";
+
+const pageTitle: string = "Works";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <header>
+    <NavWrapper />
+  </header>
+  <hr />
+  <main>
+    <section>
+      <div class="container">
+        <hgroup>
+          <h1>{pageTitle}</h1>
+          <p>... portfolio, a collection of my works</p>
+        </hgroup>
+      </div>
+    </section>
+  </main>
+  <footer></footer>
+</BaseLayout>

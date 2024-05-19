@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import NavWrapper from "@components/NavigationWrapper.astro";
 
@@ -16,27 +17,36 @@ const { frontmatter } = Astro.props;
         <hgroup>
           <h1>{frontmatter.title}</h1>
           <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
-          <p>Written by: <a href="/about/">{frontmatter.author}</a></p>
+          <!-- <p>Written by: <a href="/about/">{frontmatter.author}</a></p> -->
           <p>
             <em>{frontmatter.description}</em>
           </p>
         </hgroup>
       </div>
+    </section>
+    <section>
       <div class="container">
-        <img
+        <Image
           src={frontmatter.image.url}
-          width="300"
           alt={frontmatter.image.alt}
+          inferSize
         />
-        <!-- <div class="tags">
-            {
-                frontmatter.tags.map((tag) => (
-                <p class="tag">
-                    <a href={`/tags/${tag}`}>{tag}</a>
-                </p>
-                ))
-            }
-        </div> -->
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <details>
+          <summary>Tags</summary>
+          {
+            frontmatter.tags.map((tag: string) => (
+              <p>
+                <a class="secondary" href={`/tags/${tag}`}>
+                  {tag}
+                </a>
+              </p>
+            ))
+          }
+        </details>
       </div>
     </section>
     <hr />
