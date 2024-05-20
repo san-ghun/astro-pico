@@ -12,8 +12,19 @@ const { frontmatter } = Astro.props;
   </header>
   <hr />
   <main>
-    <section>
-      <div class="container">
+    <div class="container">
+      {
+        frontmatter.image.url.length >= 2 ? (
+          <section>
+            <Image
+              src={frontmatter.image.url}
+              alt={frontmatter.image.alt}
+              inferSize
+            />
+          </section>
+        ) : null
+      }
+      <section>
         <hgroup>
           <h1>{frontmatter.title}</h1>
           <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
@@ -22,19 +33,13 @@ const { frontmatter } = Astro.props;
             <em>{frontmatter.description}</em>
           </p>
         </hgroup>
-      </div>
-    </section>
-    <section>
-      <div class="container">
-        <Image
-          src={frontmatter.image.url}
-          alt={frontmatter.image.alt}
-          inferSize
-        />
-      </div>
-    </section>
-    <section>
-      <div class="container">
+      </section>
+      <section>
+        <article>
+          <slot />
+        </article>
+      </section>
+      <section>
         <details>
           <summary>Tags</summary>
           {
@@ -47,13 +52,7 @@ const { frontmatter } = Astro.props;
             ))
           }
         </details>
-      </div>
-    </section>
-    <hr />
-    <section>
-      <div class="container">
-        <slot />
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 </BaseLayout>
