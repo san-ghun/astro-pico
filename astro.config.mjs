@@ -10,4 +10,5 @@ export default defineConfig({
     domains: ["astro.build"],
     remotePatterns: [{ protocol: "https" }],
   },
+  site: "https://astro-pico.netlify.app",
 });

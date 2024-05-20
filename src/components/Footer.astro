@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import Social from "./Social.astro";
 ---
 
@@ -19,6 +20,9 @@ import Social from "./Social.astro";
       </li>
       <li>
         <Social platform="discord" username="" />
+      </li>
+      <li>
+        <a href={`/rss.xml`}><Icon name={`rss`} /></a>
       </li>
     </ul>
   </nav>
