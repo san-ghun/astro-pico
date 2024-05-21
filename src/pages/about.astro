@@ -28,41 +28,37 @@ const skills: string[] = [
     <NavWrapper />
   </header>
   <hr />
-  <main>
+  <main class="container">
     <section>
-      <div class="container">
-        <hgroup>
-          <h1>{pageTitle}</h1>
-          <p>... a Minimal Astro Theme!</p>
-        </hgroup>
-      </div>
+      <hgroup>
+        <h1>{pageTitle}</h1>
+        <p>... a Minimal Astro Theme!</p>
+      </hgroup>
     </section>
     <section>
-      <div class="container">
-        <p>Here are a few facts about me:</p>
-        <ul>
-          <li>
-            My name is <strong>{identity.firstName} {identity.lastName}</strong>
-          </li>
-          <li>
-            I am from <em>{identity.country}</em> and I work as a <u
-              >{identity.occupation}</u
-            >
-          </li>
-          {
-            identity.hobbies.length >= 2 && (
-              <li>
-                Two of my hobbies are: <em>{identity.hobbies[0]}</em> and
-                <em>{identity.hobbies[1]}</em>
-              </li>
-            )
-          }
-        </ul>
-        <p>My skills are:</p>
-        <ul>
-          {skills.map((skill) => <li>{skill}</li>)}
-        </ul>
-      </div>
+      <p>Here are a few facts about me:</p>
+      <ul>
+        <li>
+          My name is <strong>{identity.firstName} {identity.lastName}</strong>
+        </li>
+        <li>
+          I am from <em>{identity.country}</em> and I work as a <u
+            >{identity.occupation}</u
+          >
+        </li>
+        {
+          identity.hobbies.length >= 2 && (
+            <li>
+              Two of my hobbies are: <em>{identity.hobbies[0]}</em> and
+              <em>{identity.hobbies[1]}</em>
+            </li>
+          )
+        }
+      </ul>
+      <p>My skills are:</p>
+      <ul>
+        {skills.map((skill) => <li>{skill}</li>)}
+      </ul>
     </section>
   </main>
   <footer></footer>

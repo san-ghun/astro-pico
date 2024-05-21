@@ -12,25 +12,21 @@ const pageTitle = "Tag Index";
     <NavWrapper />
   </header>
   <hr />
-  <main>
+  <main class="container">
     <section>
-      <div class="container">
-        <hgroup>
-          <h1>{pageTitle}</h1>
-          <p>... find post faster and better.</p>
-        </hgroup>
-      </div>
+      <hgroup>
+        <h1>{pageTitle}</h1>
+        <p>... find post faster and better.</p>
+      </hgroup>
     </section>
     <section>
-      <div class="container">
-        {
-          tags.map((tag) => (
-            <p>
-              <a href={`/tags/${tag}`}>{tag}</a>
-            </p>
-          ))
-        }
-      </div>
+      {
+        tags.map((tag) => (
+          <p>
+            <a href={`/tags/${tag}`}>{tag}</a>
+          </p>
+        ))
+      }
     </section>
   </main>
 </BaseLayout>

@@ -12,25 +12,21 @@ const pageTitle: string = "Blog";
     <NavWrapper />
   </header>
   <hr />
-  <main>
+  <main class="container">
     <section>
-      <div class="container">
-        <hgroup>
-          <h1>{pageTitle}</h1>
-          <p>... thoughts about this theme.</p>
-        </hgroup>
-      </div>
+      <hgroup>
+        <h1>{pageTitle}</h1>
+        <p>... thoughts about this theme.</p>
+      </hgroup>
     </section>
     <section>
-      <div class="container">
-        <ul>
-          {
-            allPosts.map((post) => (
-              <BlogPost url={post.url} title={post.frontmatter.title} />
-            ))
-          }
-        </ul>
-      </div>
+      <ul>
+        {
+          allPosts.map((post) => (
+            <BlogPost url={post.url} title={post.frontmatter.title} />
+          ))
+        }
+      </ul>
     </section>
   </main>
 </BaseLayout>
