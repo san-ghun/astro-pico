@@ -90,20 +90,16 @@ import ModalContent from "./ModalContent.astro";
     // };
 
     // Additional event handlers for client-side script in Astro
-    if (document.getElementById("modal-button")) {
-      document
-        .getElementById("modal-button")!
-        .addEventListener("click", toggleModal);
-    }
-    if (document.getElementById("btn-cancel")) {
-      document
-        .getElementById("btn-cancel")!
-        .addEventListener("click", toggleModal);
-    }
-    if (document.getElementById("btn-confirm")) {
-      document
-        .getElementById("btn-confirm")!
-        .addEventListener("click", toggleModal);
-    }
+    document
+      .getElementById("btn-confirm")
+      ?.addEventListener("click", toggleModal);
+
+    document
+      .getElementById("btn-cancel")
+      ?.addEventListener("click", toggleModal);
+
+    document
+      .getElementById("modal-button")
+      ?.addEventListener("click", toggleModal);
   });
 </script>
