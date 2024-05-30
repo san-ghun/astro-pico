@@ -9,6 +9,7 @@ const introduction = {
   title: "Build with Astro, Shine with Pico",
   description:
     "The ultimate framework for creating stunning, high-performance blogs effortlessly. AstroPico merges the robust, modern architecture of Astro with the sleek, minimalist styling of PicoCSS, providing a seamless development experience that lets your content shine. Whether you're a novice or a seasoned developer, AstroPico empowers you to build responsive, lightning-fast, and visually captivating blogs with ease. Elevate your web development game and let your blog stand out with AstroPico.",
+  cite: "cHATgpt 4O",
 };
 type TIntroduction = typeof introduction;
 
@@ -16,12 +17,14 @@ const introduction1: TIntroduction = {
   title: "Lightweight & Looks Great",
   description:
     "The perfect solution for creating stylish, high-performance blogs with minimal effort. AstroPico combines the powerful, component-based architecture of Astro with the elegant simplicity of PicoCSS, delivering a seamless and enjoyable development experience. Whether you're a seasoned developer or just starting, AstroPico enables you to build responsive, fast-loading, and visually appealing blogs effortlessly. Embrace the future of web development with AstroPico, where performance meets aesthetic excellence.",
+  cite: "ChAtGpT Fo",
 };
 
 const introduction2: TIntroduction = {
   title: "Lightweight (or Right-way) for a Stylish but Lazy Astronaut",
   description:
     "The perfect blend of efficiency and style for modern web development. AstroPico leverages the powerful, flexible architecture of Astro and the minimalist elegance of PicoCSS, allowing you to create beautiful, high-performance blogs with minimal effort. Designed for developers who value simplicity and aesthetics, AstroPico ensures your blog not only loads quickly but also looks stunning. Embrace the smart, effortless way to build and style your blog with AstroPico, where even the laziest astronaut can achieve stellar results.",
+  cite: "cHaTgPt fO",
 };
 
 const intros: TIntroduction[] = [introduction, introduction1, introduction2];
@@ -45,13 +48,10 @@ const randomIntro = intros[Math.floor(Math.random() * intros.length)];
         simple implementation and good looking visual.
         <br />
         ... dolor sit amet, consectetur adipiscing elit. Vivamus posuere urna eget
-        tellus ornare, in sagittis erat lobortis.
-        <br />
-        In hac habitasse platea dictumst. Duis non placerat tellus. Nunc quis vehicula
-        lectus. Vivamus sit amet interdum est.
-        <br />
-        Morbi a justo vel odio consequat pellentesque. Donec felis urna, porta id
-        lacus quis, fermentum ullamcorper nisi.
+        tellus ornare, in sagittis erat lobortis. In hac habitasse platea dictumst.
+        Duis non placerat tellus. Nunc quis vehicula lectus. Vivamus sit amet interdum
+        est. Morbi a justo vel odio consequat pellentesque. Donec felis urna, porta
+        id lacus quis, fermentum ullamcorper nisi.
       </p>
     </section>
     <hr />
@@ -65,7 +65,7 @@ const randomIntro = intros[Math.floor(Math.random() * intros.length)];
       <blockquote>
         "{randomIntro.description}"
         <footer>
-          <cite>- cHATgpt 4O</cite>
+          <cite>- {randomIntro.cite}</cite>
         </footer>
       </blockquote>
     </section>
