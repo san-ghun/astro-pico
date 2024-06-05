@@ -6,13 +6,17 @@ import BlogPost from "@components/BlogPost.astro";
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("posts");
+  const orderedPosts = allPosts.sort(
+    (a, b) =>
+      new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
+  );
 
   const uniqueTags = [
-    ...new Set(allPosts.map((post) => post.data.tags).flat()),
+    ...new Set(orderedPosts.map((post) => post.data.tags).flat()),
   ];
 
   return uniqueTags.map((tag) => {
-    const filteredPosts = allPosts.filter((post) =>
+    const filteredPosts = orderedPosts.filter((post) =>
       post.data.tags.includes(tag),
     );
     return {
@@ -38,7 +42,12 @@ const { posts } = Astro.props;
         <ul>
           {
             posts.map((post) => (
-              <BlogPost url={`/posts/${post.slug}/`} title={post.data.title} />
+              <BlogPost
+                url={`/posts/${post.slug}/`}
+                title={post.data.title}
+                pubDate={post.data.pubDate}
+                description={post.data.description}
+              />
             ))
           }
         </ul>

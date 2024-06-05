@@ -5,6 +5,10 @@ import NavWrapper from "@components/NavigationWrapper.astro";
 import BlogPost from "@components/BlogPost.astro";
 
 const allPosts = await getCollection("posts");
+const orderedPosts = allPosts.sort(
+  (a, b) =>
+    new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
+);
 const pageTitle: string = "Blog";
 ---
 
@@ -23,8 +27,13 @@ const pageTitle: string = "Blog";
     <section>
       <ul>
         {
-          allPosts.map((post) => (
-            <BlogPost url={`/posts/${post.slug}/`} title={post.data.title} />
+          orderedPosts.map((post) => (
+            <BlogPost
+              url={`/posts/${post.slug}/`}
+              title={post.data.title}
+              pubDate={post.data.pubDate}
+              description={post.data.description}
+            />
           ))
         }
       </ul>
