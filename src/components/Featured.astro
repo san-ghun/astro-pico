@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import BlogPost from "./BlogPost.astro";
+
+const allPosts = await getCollection("posts");
+const firstPost = allPosts[0];
+const secondPost = allPosts[1];
+const thirdPost = allPosts[2];
+const featuredPosts = [firstPost, secondPost, thirdPost];
+---
+
+<ul>
+  {
+    featuredPosts.map((post) => (
+      <BlogPost
+        url={`/posts/${post.slug}/`}
+        title={post.data.title}
+        pubDate={post.data.pubDate}
+        description={post.data.description}
+      />
+    ))
+  }
+</ul>

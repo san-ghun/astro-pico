@@ -2,6 +2,8 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import NavWrapper from "@components/NavigationWrapper.astro";
 import Heading from "@components/Heading.astro";
+import LatestPosts from "@components/LatestPosts.astro";
+import Featured from "@components/Featured.astro";
 
 const pageTitle: string = "AstroPico";
 
@@ -41,21 +43,24 @@ const randomIntro = intros[Math.floor(Math.random() * intros.length)];
     <section>
       <hgroup>
         <h1>{pageTitle}</h1>
-        <p>Astro styled with PicoCSS</p>
+        <p>... Astro styled with PicoCSS</p>
       </hgroup>
       <p>
         <u><a href="/about/" class="">AstroPico</a></u> is an Astro theme who likes
         simple implementation and good looking visual.
-        <br />
-        ... dolor sit amet, consectetur adipiscing elit. Vivamus posuere urna eget
-        tellus ornare, in sagittis erat lobortis. In hac habitasse platea dictumst.
-        Duis non placerat tellus. Nunc quis vehicula lectus. Vivamus sit amet interdum
-        est. Morbi a justo vel odio consequat pellentesque. Donec felis urna, porta
-        id lacus quis, fermentum ullamcorper nisi.
       </p>
+      <details open>
+        <summary><u>AstroPico</u>: {randomIntro.title}</summary>
+        <blockquote>
+          "{randomIntro.description}"
+          <footer>
+            <cite>- {randomIntro.cite}</cite>
+          </footer>
+        </blockquote>
+      </details>
     </section>
     <hr />
-    <section>
+    <!-- <section>
       <strong>
         <u>AstroPico</u>
         : {randomIntro.title}
@@ -67,17 +72,37 @@ const randomIntro = intros[Math.floor(Math.random() * intros.length)];
         </footer>
       </blockquote>
     </section>
-    <hr />
+    <hr /> -->
     <section>
-      <Heading title="Featured" heading="3" description="" />
+      <hgroup>
+        <Heading
+          title="Featured"
+          heading="3"
+          description="... some of finest"
+        />
+      </hgroup>
+      <Featured />
     </section>
     <hr />
     <section>
-      <Heading title="Latest posts" heading="3" description="" />
+      <hgroup>
+        <Heading
+          title="Latest posts"
+          heading="3"
+          description="... some of latest"
+        />
+      </hgroup>
+      <LatestPosts />
     </section>
     <hr />
     <section>
       <Heading title="Recent projects" heading="3" description="" />
+      <p>
+        <small>
+          For my featured projects, please visit my
+          <a href="https://www.github.com/san-ghun">Github</a>
+        </small>
+      </p>
     </section>
     <hr />
     <section>
