@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import NavWrapper from "@components/NavigationWrapper.astro";
+import ProjectCard from "@components/ProjectCard.astro";
 
+const allProjects = await Astro.glob("../projects/*.mdx");
 const pageTitle: string = "Projects";
 ---
 
@@ -16,6 +18,24 @@ const pageTitle: string = "Projects";
         <h1>{pageTitle}</h1>
         <p>... portfolio, a collection of my projects</p>
       </hgroup>
+    </section>
+    <section>
+      <ul>
+        {
+          allProjects.map((project) => (
+            // <li>
+            //   <a href={project.url}>{project.frontmatter.title}</a>
+            // </li>
+            <ProjectCard
+              url={project.url}
+              title={project.frontmatter.title}
+              pubDate={project.frontmatter.pubDate}
+              description={project.frontmatter.description}
+              thumbnail="/assets/projects/home-poker-table/180.png"
+            />
+          ))
+        }
+      </ul>
     </section>
   </main>
 </BaseLayout>
