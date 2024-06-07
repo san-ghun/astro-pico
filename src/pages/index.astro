@@ -4,6 +4,7 @@ import NavWrapper from "@components/NavigationWrapper.astro";
 import Heading from "@components/Heading.astro";
 import LatestPosts from "@components/LatestPosts.astro";
 import Featured from "@components/Featured.astro";
+import RecentProjects from "@components/RecentProjects.astro";
 
 const pageTitle: string = "AstroPico";
 
@@ -96,7 +97,10 @@ const randomIntro = intros[Math.floor(Math.random() * intros.length)];
     </section>
     <hr />
     <section>
-      <Heading title="Recent projects" heading="3" description="" />
+      <hgroup>
+        <Heading title="Recent projects" heading="3" description="" />
+      </hgroup>
+      <RecentProjects />
       <p>
         <small>
           For my featured projects, please visit my

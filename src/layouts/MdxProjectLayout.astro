@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import NavWrapper from "@components/NavigationWrapper.astro";
+
+const { frontmatter } = Astro.props;
+const processedDate = new Date(frontmatter.pubDate?.valueOf());
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+  <header>
+    <NavWrapper />
+  </header>
+  <hr />
+  <main>
+    <div class="container">
+      {
+        frontmatter.image.url.length >= 2 ? (
+          <section>
+            <Image
+              src={frontmatter.image.url}
+              alt={frontmatter.image.alt}
+              inferSize
+            />
+          </section>
+        ) : null
+      }
+      <section>
+        <hgroup>
+          <h1>{frontmatter.title}</h1>
+          <p>Published on: {processedDate.toString().slice(0, 15)}</p>
+          <!-- <p>Written by: <a href="/about/">{frontmatter.author}</a></p> -->
+          <p>
+            <em>{frontmatter.description}</em>
+          </p>
+        </hgroup>
+      </section>
+      <hr />
+      <section>
+        <slot />
+      </section>
+      <hr />
+      <section>
+        <details>
+          <summary>Tags</summary>
+          {
+            frontmatter.tags.map((tag: string) => (
+              <p>
+                <a class="secondary" href={`/tags/${tag}`}>
+                  {tag}
+                </a>
+              </p>
+            ))
+          }
+        </details>
+      </section>
+    </div>
+  </main>
+</BaseLayout>

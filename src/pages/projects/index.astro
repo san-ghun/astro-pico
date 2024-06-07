@@ -4,6 +4,11 @@ import NavWrapper from "@components/NavigationWrapper.astro";
 import ProjectCard from "@components/ProjectCard.astro";
 
 const allProjects = await Astro.glob("../projects/*.mdx");
+const orderedProjects = allProjects.sort(
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).valueOf() -
+    new Date(a.frontmatter.pubDate).valueOf(),
+);
 const pageTitle: string = "Projects";
 ---
 
@@ -22,7 +27,7 @@ const pageTitle: string = "Projects";
     <section>
       <ul>
         {
-          allProjects.map((project) => (
+          orderedProjects.map((project) => (
             // <li>
             //   <a href={project.url}>{project.frontmatter.title}</a>
             // </li>
@@ -31,7 +36,7 @@ const pageTitle: string = "Projects";
               title={project.frontmatter.title}
               pubDate={project.frontmatter.pubDate}
               description={project.frontmatter.description}
-              thumbnail="/assets/projects/home-poker-table/180.png"
+              thumbnail=""
             />
           ))
         }
