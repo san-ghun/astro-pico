@@ -7,21 +7,26 @@ description: "A simple chip calculator to have fun with friends and family."
 image:
   url: ""
   alt: ""
-tags: []
+tags: ["project", "ios", "swift", "uikit", "storyboard"]
 ---
 
 import { Image } from "astro:assets";
 
-<Image
-  src="/assets/projects/home-poker-table/180.png"
-  alt="Home Poker Table"
-  width="180"
-  height="180"
-/>
+<div style="display: flex; align-items: center; justify-content: center;">
+  <Image
+    src="/assets/projects/home-poker-table/180.png"
+    alt="Home Poker Table"
+    width="180"
+    height="180"
+  />
+</div>
 
-# [Home Poker Table](https://apps.apple.com/app/home-poker-table/id1629143360?itscg=30200&itsct=apps_box_appicon)
-
-Don't fight for coins, play for fun!
+<div style="display: flex; align-items: center; justify-content: center;">
+  # [Home Poker Table](https://apps.apple.com/app/home-poker-table/id1629143360?itscg=30200&itsct=apps_box_appicon)
+</div>
+<div style="display: flex; align-items: center; justify-content: center;">
+  Don't fight for coins, play for fun!
+</div>
 
 > -. First personal app development project.  
 > -. One-person production, released on App Store.  
@@ -48,6 +53,7 @@ Don't fight for coins, play for fun!
 - With the goal of experiencing whole process from the start of the project to the launch, not only development, but also planning and design were carried out directly.
 - Develop with `UIKit` using `storyboard`, in MVC pattern.
 
+<p align="center">
 <Image
   src="/assets/projects/home-poker-table/screenshots/0.png"
   alt="Home Poker Table"
@@ -84,6 +90,7 @@ Don't fight for coins, play for fun!
   width="180"
   height="600"
 />
+</p>
 
 1. **Main view**\
    "How To" instruction equipted on view.
@@ -124,7 +131,7 @@ Don't fight for coins, play for fun!
 
 ## Folder Structure
 
-```
+```bash
 .
 ├── HomePokerTable.xcodeproj
 ├── HomePokerTable
@@ -224,7 +231,7 @@ Don't fight for coins, play for fun!
 - [ ] add setting page
 - [ ] build with swiftui
 
-## License
+{/* ## License
 
 The MIT License (MIT)
 
@@ -246,4 +253,4 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+SOFTWARE. */}
