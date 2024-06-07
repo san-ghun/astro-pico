@@ -42,16 +42,10 @@ const processedDate = new Date(frontmatter.pubDate?.valueOf());
       <hr />
       <section>
         <details>
-          <summary>Tags</summary>
-          {
-            frontmatter.tags.map((tag: string) => (
-              <p>
-                <a class="secondary" href={`/tags/${tag}`}>
-                  {tag}
-                </a>
-              </p>
-            ))
-          }
+          <summary>Keywords</summary>
+          <ul>
+            {frontmatter.keywords.map((keyword: string) => <li>{keyword}</li>)}
+          </ul>
         </details>
       </section>
     </div>

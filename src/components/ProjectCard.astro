@@ -4,6 +4,7 @@ interface Props {
   title: string;
   pubDate: string;
   description: string;
+  keywords: string[];
   thumbnail: string;
 }
 
@@ -22,7 +23,7 @@ const months = [
   "December",
 ];
 
-const { url, title, pubDate, description, thumbnail } = Astro.props;
+const { url, title, pubDate, description, keywords, thumbnail } = Astro.props;
 const processedDate = new Date(pubDate);
 ---
 
@@ -33,5 +34,16 @@ const processedDate = new Date(pubDate);
     {months[processedDate.getMonth() - 1]}
     {processedDate.getDate()}, {processedDate.getFullYear()}
   </small>
-  <p><i>{description}</i></p>
+  <p>
+    <i>{description}</i>
+    <br />
+    <span><small><b>keys:</b></small></span>
+    {
+      keywords.map((key) => (
+        <span class="key">
+          <small>{key} / </small>
+        </span>
+      ))
+    }
+  </p>
 </li>
