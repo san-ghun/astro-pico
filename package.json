@@ -1,7 +1,7 @@
 {
   "name": "astro-pico",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.8.1",
   "description": "Astro styled with Pico CSS, build with Astro, shine with Pico",
   "scripts": {
     "dev": "astro dev",
