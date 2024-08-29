@@ -1,6 +1,6 @@
 # AstroPico: Build with Astro, Shine with Pico
 
-<!-- ![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554) -->
+![AstroPico](public/astro-pico-theme-image.png)
 
 AstroPico, an [Astro](https://docs.astro.build/) styled with [Pico CSS](https://picocss.com/), is a static, minimal, lightweight, fast, responsive Astro theme for blog or simple web for those who likes simple implementation and good looking visual.
 
